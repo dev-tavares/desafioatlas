@@ -1,7 +1,11 @@
+import { BrowserRouter, Route } from 'react-router-dom';
+import GlobalUserSearch from './pages/GlobalUserSearch';
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <BrowserRouter>
+      <Route path="/" component={ GlobalUserSearch } />
+    </BrowserRouter>
   );
 }
 
