@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getRepoInfo, getUserInfo } from '../utils/getUserInfo';
+import Profile from '../components/Profile';
+import Repos from '../components/Repos';
 
 function User(props) {
   const { match } = props;
@@ -21,39 +23,10 @@ function User(props) {
 
   return (
     <div>
-      <div>
-        <img src={ userInfo.avatar_url } alt="Profile avatar" />
-        <p>
-          {userInfo.name}
-        </p>
-        <p>
-          {userInfo.login}
-        </p>
-        <button type="button">Follow</button>
-        <p>
-          {userInfo.bios}
-        </p>
-        <p>
-          {`"followers": ${userInfo.followers}, "following": ${userInfo.following},`}
-        </p>
-      </div>
+      <Profile userInfo={ userInfo } />
       <div>
         {repoInfo.map((repo, index) => (
-          <div key={ index }>
-            <p>
-              {repo.name}
-            </p>
-            <p>
-              {repo.language}
-            </p>
-            {repo.description && <p>{`Description ${repo.description}`}</p>}
-            <p>
-              Updated on
-              {' '}
-              {new Date(repo.updated_at)
-                .toLocaleDateString('en-GB', { month: 'short', day: 'numeric' })}
-            </p>
-          </div>
+          <Repos key={ index } repo={ repo } />
         ))}
       </div>
     </div>
