@@ -6,10 +6,25 @@ import '../css/globalUser.css';
 function GlobalUserSearch() {
   const history = useHistory();
   const [userValue, setUserValue] = useState('');
+  const [emptyInputMessage, setEmptyInputMessage] = useState(false);
+  const [invalidUserMessage, setInvalidUserMessage] = useState(false);
 
-  const searchUser = async () => {
+  const emptyInputAlert = () => {
+    setEmptyInputMessage(true);
+  };
+
+  const invalidInputValueAlert = () => {
+    setInvalidUserMessage(true);
+  };
+
+  const searchUserButton = async () => {
+    if (userValue === '') return emptyInputAlert();
+
     const data = await getUserInfo(userValue);
-    console.log(data);
+
+    if (data.message) return invalidInputValueAlert();
+
+    console.log(data, typeof data);
     history.push(`/${userValue}`);
   };
 
@@ -26,11 +41,27 @@ function GlobalUserSearch() {
             ({ target }) => setUserValue(target.value)
           }
         />
-        <button className="search-button" type="button" onClick={ searchUser }>
+        <button className="search-button" type="button" onClick={ searchUserButton }>
           <img src="https://img.icons8.com/material-sharp/14/FFFFFF/search.png" alt="Search" />
           &nbsp;Buscar
         </button>
       </div>
+      {
+        emptyInputMessage && (
+          <span className="alert">
+            Informe um nome de usuário válido do github!
+          </span>
+        )
+      }
+      {
+        invalidUserMessage && (
+          <span className="alert">
+            Usuário não encontrado no github.
+            <br />
+            Verifique se você digitou o nome corretamente!
+          </span>
+        )
+      }
     </div>
   );
 }
