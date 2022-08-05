@@ -1,4 +1,5 @@
 import { BrowserRouter, Route } from 'react-router-dom';
+import React from 'react';
 import GlobalUserSearch from './pages/GlobalUserSearch';
 import User from './pages/User';
 
