@@ -17,7 +17,7 @@ function User(props) {
     };
 
     searchUser();
-  }, []);
+  }, [userValue]);
 
   return (
     <div>
