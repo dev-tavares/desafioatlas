@@ -9,20 +9,12 @@ function GlobalUserSearch() {
   const [emptyInputMessage, setEmptyInputMessage] = useState(false);
   const [invalidUserMessage, setInvalidUserMessage] = useState(false);
 
-  const emptyInputAlert = () => {
-    setEmptyInputMessage(true);
-  };
-
-  const invalidInputValueAlert = () => {
-    setInvalidUserMessage(true);
-  };
-
   const searchUserButton = async () => {
-    if (userValue === '') return emptyInputAlert();
+    if (userValue === '') return setEmptyInputMessage(true);
 
     const data = await getUserInfo(userValue);
 
-    if (data.message) return invalidInputValueAlert();
+    if (data.message) return setInvalidUserMessage(true);
 
     console.log(data, typeof data);
     history.push(`/${userValue}`);
@@ -41,11 +33,13 @@ function GlobalUserSearch() {
             ({ target }) => setUserValue(target.value)
           }
         />
+
         <button className="search-button" type="button" onClick={ searchUserButton }>
           <img src="https://img.icons8.com/material-sharp/14/FFFFFF/search.png" alt="Search" />
           &nbsp;Buscar
         </button>
       </div>
+
       {
         emptyInputMessage && (
           <span className="alert">
