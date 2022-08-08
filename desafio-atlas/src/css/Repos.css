@@ -1,0 +1,40 @@
+.repo-card{
+  padding: 20px 0px;
+  border-bottom: 1px solid gray;;
+}
+
+.repo-name{
+  color: #0367d9e8;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.repo-description{
+  margin: 8px 0 16px;
+  font-size: 16px;
+  color: gray;
+  letter-spacing: 0.1px;
+}
+
+.color {
+  border-radius: 100%;
+  margin-right: 9px;
+  display: inline-block;
+  background-color: transparent;
+  width: 14px;
+  height: 14px;
+}
+
+.language-update{
+  font-size: 14px;
+  color: gray;
+}
+
+.fork-info{
+  display: flex;
+  align-items: baseline;
+  margin: 8px 0 16px;
+  font-size: 14px;
+  color: gray;
+  letter-spacing: 0.1px;
+}
