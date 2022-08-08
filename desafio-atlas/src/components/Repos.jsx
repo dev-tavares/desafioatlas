@@ -5,17 +5,17 @@ import '../css/Repos.css';
 import languageColor from '../utils/gitHubColors';
 
 function Repos({ repo }) {
-  const { name, language, description, updated_at, license } = repo;
+  const { name, language, description, updated_at, license, html_url } = repo;
 
   return (
     name && (
 
       <div className="repo-card">
-        <p className="repo-name">
+        <a href={ html_url } className="repo-name">
           {name}
-        </p>
+        </a>
         {description && (
-          <p className="repo-description">{`Description ${description}`}</p>
+          <p className="repo-description">{description}</p>
         )}
         {
           repo.fork ? (
@@ -67,6 +67,7 @@ Repos.propTypes = {
     description: PropTypes.string,
     language: PropTypes.string,
     name: PropTypes.string,
+    html_url: PropTypes.string,
     updated_at: PropTypes.string,
     fork: PropTypes.bool,
     license: PropTypes.shape({

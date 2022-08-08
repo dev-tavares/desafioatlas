@@ -17,9 +17,12 @@
 .repositories{
   position: absolute;
   left: 37%;
-  top: 38px;
+  top: 36px;
   border-bottom: 4px solid #F9826C;
   padding: 7px;
+  align-items: baseline;
+  color: black;
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 600px)
@@ -48,7 +51,7 @@
     top: 430px;
     border-bottom: 4px solid #F9826C;
     padding: 10px;
-    left: 37%;
+    left: 35%;
   }
 
   .profile-container{

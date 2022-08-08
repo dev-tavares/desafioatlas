@@ -25,11 +25,13 @@ function User(props) {
   return (
     <div className="user-container">
       <Profile userInfo={ userInfo } />
-      <span className="repositories">
+      <div className="repositories">
+        <img src="https://img.icons8.com/windows/15/000000/repository.png" alt="repository" />
+        {' '}
         Repositories
         {' '}
         {repoInfo.length}
-      </span>
+      </div>
       <div className="repos-container">
         {repoInfo.map((repo, index) => (
           <Repos key={ index } repo={ repo } />
