@@ -24,7 +24,6 @@ function GlobalUserSearch() {
       return setInvalidUserMessage(true);
     }
 
-    console.log(data, typeof data);
     history.push(`/${userValue}`);
   };
 
