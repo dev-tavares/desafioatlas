@@ -1,7 +1,9 @@
 import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import { getUserInfo } from '../utils/getUserInfo';
-import '../css/globalUser.css';
+import '../css/GlobalUserSearch.css';
+
+const SVG_SEARCH_ICON = 'https://img.icons8.com/material-sharp/14/FFFFFF/search.png';
 
 function GlobalUserSearch() {
   const history = useHistory();
@@ -35,7 +37,7 @@ function GlobalUserSearch() {
         />
 
         <button className="search-button" type="button" onClick={ searchUserButton }>
-          <img src="https://img.icons8.com/material-sharp/14/FFFFFF/search.png" alt="Search" />
+          <img src={ SVG_SEARCH_ICON } alt="Search" />
           &nbsp;Buscar
         </button>
       </div>
