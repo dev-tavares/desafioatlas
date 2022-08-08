@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { getRepoInfo, getUserInfo } from '../utils/getUserInfo';
 import Profile from '../components/Profile';
 import Repos from '../components/Repos';
+import '../css/User.css';
 
 function User(props) {
   const { match } = props;
@@ -22,9 +23,14 @@ function User(props) {
   }, [userValue]);
 
   return (
-    <div>
+    <div className="user-container">
       <Profile userInfo={ userInfo } />
-      <div>
+      <span className="repositories">
+        Repositories
+        {' '}
+        {repoInfo.length}
+      </span>
+      <div className="repos-container">
         {repoInfo.map((repo, index) => (
           <Repos key={ index } repo={ repo } />
         ))}
