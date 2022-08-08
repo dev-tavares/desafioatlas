@@ -1,27 +1,56 @@
 /* eslint-disable camelcase */
 import PropTypes from 'prop-types';
 import React from 'react';
+import '../css/Profile.css';
+
+const SVG_PEOPLE_ICON = 'https://raw.githubusercontent.com/primer/octicons/a20f6d75937ca464d5087eefb63152d1d605cb60/icons/people-24.svg';
 
 function Profile({ userInfo }) {
   const { avatar_url, name, login, bios, followers, following } = userInfo;
 
-  console.log(userInfo);
   return (
-    <div>
-      <img src={ avatar_url } alt="Profile avatar" />
-      <p>
-        {name}
-      </p>
-      <p>
-        {login}
-      </p>
-      <button type="button">Follow</button>
-      <p>
-        {bios}
-      </p>
-      <p>
-        {`"followers": ${followers}, "following": ${following},`}
-      </p>
+    <div className="profile-container">
+      <img
+        className="profile-image"
+        src={ avatar_url }
+        alt="Profile avatar"
+      />
+      <div className="info-container">
+        <p className="user-name">
+          {name}
+        </p>
+        <p className="user-login">
+          {login}
+        </p>
+        <button
+          className="follow-button"
+          type="button"
+        >
+          Follow
+
+        </button>
+        <p className="user-bios">
+          {bios}
+        </p>
+        <div className="followers-following">
+          <img
+            className="people-icon"
+            src={ SVG_PEOPLE_ICON }
+            alt=""
+          />
+            &nbsp;
+          <b>{followers}</b>
+            &nbsp;
+          <span>followers</span>
+            &nbsp;
+          <span>·</span>
+            &nbsp;
+          <b>{following}</b>
+            &nbsp;
+          <span>following</span>
+        </div>
+        <hr />
+      </div>
     </div>
   );
 }

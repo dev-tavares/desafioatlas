@@ -1,0 +1,71 @@
+.profile-container{
+  top: 25px;
+  position: absolute;
+  width: 25%;
+  margin-left: 0px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5%; 
+}
+
+.profile-image{
+  border-radius: 100%;
+  width: 200px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: gray;
+}
+
+.user-name{
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: rgb(36,41,46);
+}
+
+.user-login{
+  font-size: 20px;
+  color: #9b9b9b;
+  font-weight: 300;
+}
+
+.followers-following{
+  display: flex;
+  align-items: baseline;
+}
+
+.people-icon{
+  width: 14px;
+}
+
+span {
+  font-size: 14px;
+  color: gray;
+}
+
+.follow-button{
+  width: 100%;
+  position: relative;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+.user-bios{
+
+}
+
+.user-info{
+
+}
+
+
