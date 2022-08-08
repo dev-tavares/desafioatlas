@@ -12,11 +12,17 @@ function GlobalUserSearch() {
   const [invalidUserMessage, setInvalidUserMessage] = useState(false);
 
   const searchUserButton = async () => {
-    if (userValue === '') return setEmptyInputMessage(true);
+    if (userValue === '') {
+      setInvalidUserMessage(false);
+      return setEmptyInputMessage(true);
+    }
 
     const data = await getUserInfo(userValue);
 
-    if (data.message) return setInvalidUserMessage(true);
+    if (data.message) {
+      setEmptyInputMessage(false);
+      return setInvalidUserMessage(true);
+    }
 
     console.log(data, typeof data);
     history.push(`/${userValue}`);
