@@ -7,6 +7,8 @@ import languageColor from '../utils/gitHubColors';
 function Repos({ repo }) {
   const { name, language, description, updated_at, license, html_url } = repo;
 
+  console.log(repo);
+
   return (
     name && (
 
@@ -18,7 +20,7 @@ function Repos({ repo }) {
           <p className="repo-description">{description}</p>
         )}
         {
-          repo.fork ? (
+          repo.fork && license ? (
             <div className="fork-info">
               <img src="https://img.icons8.com/ios-glyphs/13/000000/code-fork.png" alt="fork-icon" />
               <p>Forked&nbsp;</p>
