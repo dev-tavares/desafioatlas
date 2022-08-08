@@ -1,39 +1,80 @@
-#Desafio frontend ReactJS
+# Desafio React
 
-##Objetivo:
-Desenvolver uma aplicação React que mostre o perfil do desenvolvedor e liste os seus repositórios do github. (Pode utilizar como base no create-react-app).
+## Visão geral
 
-##User stories:
-SENDO um usário na página principal, POSSO pesquisar o usuário pelo meu nome ou qualquer outro nome e pequisar no github PARA QUE obtenha os dados do perfil e os respectivos respositórios.
+### Contextualizando:
 
-##Critérios de aceite
-DADO QUE o usuário na home-page digitar o nome de usuário QUANDO clicar no botão Pesquisar, ENTÃO o sistema pesquisa e preenche a tela de perfil mostrando o resultado.
+Nessa aplicação, fiquei responsável por criar uma tela de pesquisa de usuários do github, onde fosse possível visualizar os repósitorios de cada usuário pesquisado.
+Além disso caso a pessoa usuária da aplicação não digitasse nada na barra de pesquisa, uma mensagem de erro deveria ser mostrada e caso o usuário do github pesquisado não exista, aplicação também mostra uma mensagem de erro.
 
-DADO QUE o usuário na home-page QUANDO clicar no botão Pesquisar sem preencher o campo, ENTÃO o sistema retorna a mensagem: "informe um nome de usuário válido do github".
+<br />
 
-DADO QUE o usuário na home-page e digitar o usuário "UsuarioqueProvavelmenteNãoExisteLá" QUANDO clicar no botão Pesquisar ENTÃO o sistema faz a consulta e retorna a mensagem: "Usuário não encontrado no github. Verifique se você digitou o nome corretamente"
+## Rode em sua maquina
 
-##Orientações Técnicas:
-Utilizar um biblioteca para consumo de API: sugestão Axios.
-Utilizar uma biblioteca de roteamento para alternar entre as paginas: sugestão react-router-dom.
-Observar a orientação a componente para reuso de código.
-CSS liberado utilizar como achar melhor. Do clássico as libraries (bootstrap, material UI, etc.).
-Ser Responsivo
+### Modo tradicional
 
-##Instruções gerais:
-Faça um fork deste projeto. (ou clone)
-Crie uma branch (ou novo repositório) com o padrão seunome-desafio-react.
-Ao finalizar este desafio, enviar o link via whats para o solicitante.
+<details>
+  <summary><b>Requisitos:</b></summary><br>
 
-##Referências da API:
-Documentação oficial do GitHub: https://docs.github.com/en/rest
-API de busca de usuários do GitHub: https://api.github.com/users/username
-API de busca de repositórios do usuário pesquisado: https://api.github.com/users/username/repos
+  - Ter o `git` instalado em sua máquina;
+  - Ter o `npm` instalado em sua máquina;
+  
+</details>
 
-##UI
-Design da tela pode ser replicada a tela de perfil e repositórios do próprio github.
-Exemplo na pasta images deste repositório.
+<details>
+  <summary><b>Clonar</b></summary><br>
 
-##Diferenciais:
-Legibilidade;
-Boa documentação;
+Para clonar o repositório usando HTTPS:
+
+```
+git clone https://github.com/dev-tavares/desafioatlas.git
+```
+
+Para clonar usando SSH:
+
+```
+git clone git@github.com:dev-tavares/desafioatlas.git
+```
+</details>
+
+<details>
+  <summary><b>Vamos lá</b></summary><br>
+ 
+Entre na pasta do projeto:
+
+```
+cd desafioatlas/desafioatlas
+```
+
+Instale as dependências do projeto:
+
+```
+npm i
+```
+
+Crie uma build do projeto
+
+```
+npm run build
+```
+
+Inicie o projeto:
+
+```
+npm start
+```
+
+Abra o link abaixo no navegador de sua preferencia:
+
+```
+http://localhost:3000/
+```
+</details>
+
+## Tela de pesquisa:
+
+![Telas dos clientes](./images/search-page.png)
+
+## Tela de usuário:
+
+![Telas dos clientes](./images/user-page.png)
